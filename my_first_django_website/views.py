@@ -4,6 +4,9 @@ from django.shortcuts import render
 def home_page(request):
     return render(request, 'home.html')
 
+def about_page(request):
+    return render(request, 'about.html')
+
 def count_page(request):
     text = request.GET["usertext"]
     char_len = len(text)
@@ -16,8 +19,4 @@ def count_page(request):
             word_dictionary[word] += 1
         else:
             word_dictionary[word] = 1
-
-
-
-
     return render(request, 'count.html', {"text":text, "text_len":char_len, "words_len" : len(words_list), "word_dictionary": word_dictionary,"data": sorted(word_dictionary.items())})
