@@ -27,3 +27,21 @@
 <div>
     {{word_dictionary}}
 </div>
+
+<br/><br/>
+
+<h2>The sorted word frequency using keys :</h2>
+
+<div>
+    {{data}}
+</div>
+
+<br/><br/>
+
+<h2>The sorted words with frequency :</h2>
+
+<div>
+    {% for word, frequency in data %}
+    {{word}} -- {{frequency}} <br/>
+    {% endfor %}
+</div>

@@ -17,4 +17,7 @@ def count_page(request):
         else:
             word_dictionary[word] = 1
 
-    return render(request, 'count.html', {"text":text, "text_len":char_len, "words_len" : len(words_list), "word_dictionary": word_dictionary})
+
+
+
+    return render(request, 'count.html', {"text":text, "text_len":char_len, "words_len" : len(words_list), "word_dictionary": word_dictionary,"data": sorted(word_dictionary.items())})
